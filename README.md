@@ -66,7 +66,7 @@ download:documents - Download to documents
 
 
 
-# Endpoints
+# Endpoints - ! This is outdated
 
 ## Logging in to your account
 
