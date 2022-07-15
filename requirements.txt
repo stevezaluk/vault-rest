@@ -1,0 +1,6 @@
+vault-lib
+python-dotenv
+flask
+flask_restx
+flask-caching
+argparse
