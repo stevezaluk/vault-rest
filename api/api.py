@@ -3,7 +3,7 @@ from dotenv import dotenv_values
 from flask import Flask
 from flask_restx import Api
 
-from api.context import teardown_db, teardown_plex
+from api.context import teardown_resources
 
 from api.namespaces.file import file_namespace
 from api.namespaces.metrics import metrics_namespace
@@ -30,8 +30,7 @@ class RestAPI(object):
                 self._app.config[key] = value
 
     def _register_teardowns(self):
-        self._app.teardown_appcontext(teardown_db)
-        self._app.teardown_appcontext(teardown_plex)
+        self._app.teardown_appcontext(teardown_resources)
 
     def _build_namespaces(self):
         self._api.add_namespace(file_namespace, path="/api/v1/")
